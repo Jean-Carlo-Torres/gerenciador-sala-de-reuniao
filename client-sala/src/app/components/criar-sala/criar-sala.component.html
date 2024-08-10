@@ -1,1 +1,25 @@
-<p>criar-sala works!</p>
+<h3>Criar Sala</h3>
+<div [hidden]="enviado" style="width: 400px;">
+  <form (ngSubmit)="enviar()">
+    <div class="form-group">
+      <label for="nome">Nome</label>
+      <input type="text" class="form-control" id="nome" required [(ngModel)]="sala.nome" name="nome">
+    </div>
+
+    <div class="form-group">
+      <label for="nome">date</label>
+      <input type="text" class="form-control" id="data" required [(ngModel)]="sala.data" name="data">
+    </div>
+
+    <div class="form-group">
+      <label for="nome">startHour</label>
+      <input type="text" class="form-control" id="hora" required [(ngModel)]="sala.hora" name="hora">
+    </div>
+
+    <button type="submit" class="btn btn-success">Enviar</button>
+  </form>
+</div>
+
+<div [hidden]="!enviado">
+  <button class="btn btn-success" (click)="novaSala()">Adicionar</button> -->
+</div>
