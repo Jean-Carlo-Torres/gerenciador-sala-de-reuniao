@@ -27,7 +27,7 @@ export class CriarSalaComponent implements OnInit {
     this.salaService.criarSala(this.sala)
       .subscribe(data => {
         console.log(data),
-          error => console.log(error);
+          (error: any) => console.log(error);
         this.sala = new Sala();
         this.irParaALista();
       })
