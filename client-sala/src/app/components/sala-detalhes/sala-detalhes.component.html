@@ -1,18 +1,17 @@
-<h2>Detalhes da Sala</h2> 
-
-<hr/>
-<div *ngIf="sala">
+<h2 class="text-center">Detalhes da Sala</h2>
+<hr />
+<div *ngIf="sala" class="card p-4 shadow-sm" style="max-width: 400px; margin: auto;">
   <div>
-    <label><b>Nome </b></label> {{sala.nome}}
+    <label><b>Nome:</b></label> {{ sala.nome }}
   </div>
   <div>
-    <label><b> Data</b></label> {{sala.data}}
+    <label><b>Data:</b></label> {{ sala.data }}
   </div>
   <div>
-    <label><b> Horario</b></label> {{sala.hora}}
+    <label><b>Horário:</b></label> {{ sala.hora }}
   </div>
 </div>
 
-<br>
-<br>
-<button (click)="list()" class="btn btn-primary">Voltar para a lista de salas</button><br>
+<div class="text-center mt-3">
+  <button (click)="list()" class="btn btn-primary">Voltar para a lista de salas</button>
+</div>

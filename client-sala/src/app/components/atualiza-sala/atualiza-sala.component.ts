@@ -23,6 +23,7 @@ export class AtualizaSalaComponent implements OnInit {
       .subscribe(data => {
         console.log(data)
         this.sala = data;
+        this.sala.data = this.formatarData(this.sala.data);
       }, error => console.log(error));
   }
 
@@ -34,6 +35,11 @@ export class AtualizaSalaComponent implements OnInit {
       },
       error => console.log(error)
     )
+  }
+
+  formatarData(data: string): string {
+    const [dia, mes, ano] = data.split('/');
+    return `${ano}-${mes}-${dia}`;
   }
 
   enviar() {

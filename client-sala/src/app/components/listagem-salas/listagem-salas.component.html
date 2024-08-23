@@ -1,29 +1,35 @@
 <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h2>Lista de Salas</h2>
-    </div>
-    <div class="panel-body">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>Data</th>
-            <th>Horario</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let sala of salas | async">
-            <td>{{sala.nome}}</td>
-            <td>{{sala.data}}</td>
-            <td>{{sala.hora}}</td>
-            <td><button (click)="apagarSala(sala.id)" class="btn btn-danger">Apagar</button>
-              <button (click)="atualizarSala(sala.id)" class="btn btn-info" style="margin-left: 10px">Atualizar</button>
-                <button (click)="detalhesSala(sala.id)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="panel-heading text-center">
+    <h2>Lista de Salas</h2>
   </div>
-  
+  <div class="panel-body">
+    <table class="table table-hover table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th>Nome</th>
+          <th>Data</th>
+          <th>Horário</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sala of salas | async">
+          <td>{{ sala.nome }}</td>
+          <td>{{ sala.data }}</td>
+          <td>{{ sala.hora }}</td>
+          <td>
+            <button (click)="apagarSala(sala.id)" class="btn btn-danger btn-sm me-2">
+              <i class="fa fa-trash"></i> Apagar
+            </button>
+            <button (click)="atualizarSala(sala.id)" class="btn btn-info btn-sm me-2">
+              <i class="fa fa-edit"></i> Atualizar
+            </button>
+            <button (click)="detalhesSala(sala.id)" class="btn btn-primary btn-sm">
+              <i class="fa fa-info-circle"></i> Detalhes
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
